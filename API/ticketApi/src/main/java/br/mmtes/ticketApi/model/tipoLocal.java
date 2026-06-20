@@ -1,5 +1,5 @@
 package br.mmtes.ticketApi.model;
 
-public enum tipoLocal {
-    Estação, RedeExterna, Site;
+public enum TipoLocal {
+    ESTACAO, REDE_EXTERNA, SITE
 }
