@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: Arial, sans-serif; color: #333; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .header { background-color: #003366; color: white; padding: 16px; }
+        .section { margin: 16px 0; }
+        .label { font-weight: bold; }
+        ul { padding-left: 20px; }
+        .footer { font-size: 12px; color: #888; margin-top: 24px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h2 th:text="${assunto}">Notificação de Atividade</h2>
+    </div>
+    <div class="section">
+        <p><span class="label">Número da Atividade:</span> <span th:text="${numeroAtividade}"></span></p>
+        <p><span class="label">Local:</span> <span th:text="${localAtividade}"></span></p>
+        <p><span class="label">Descrição:</span> <span th:text="${descricaoAtividade}"></span></p>
+        <p><span class="label">Início previsto:</span> <span th:text="${dataInicio}"></span></p>
+        <p><span class="label">Término previsto:</span> <span th:text="${dataTermino}"></span></p>
+    </div>
+    <div class="section">
+        <p class="label">Circuitos afetados:</p>
+        <ul>
+            <li th:each="circuito : ${circuitosAfetados}" th:text="${circuito}"></li>
+        </ul>
+    </div>
+    <div class="footer">
+        <p>Esta é uma mensagem automática do Sistema SIR. Não responda a este e-mail.</p>
+    </div>
+</div>
+</body>
+</html>
